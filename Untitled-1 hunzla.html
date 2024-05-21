@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Shop</title>
+    <style>
+        /* CSS styles can be added here */
+        /* Add your own styles or link to an external stylesheet */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Watch Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products">
+            <h2>Our Products</h2>
+            <div id="product-list">
+                <!-- Product items will be dynamically added here using JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Watch Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript code for fetching and displaying products
+        document.addEventListener("DOMContentLoaded", function() {
+            // Dummy product data (you can replace this with actual product data)
+            const products = [
+                { name: "Watch 1", price: "$100", image: "https://s.turbifycdn.com/aah/movadobaby/rado-sale-8.jpg" },
+                { name: "Watch 2", price: "$120", image: "https://s.turbifycdn.com/aah/movadobaby/rado-coupole-56.jpg" },
+                { name: "Watch 3", price: "$150", image: "https://s.turbifycdn.com/aah/movadobaby/rado-captain-cook-19.jpg" }
+                // Add more product items as needed
+            ];
+
+            const productList = document.getElementById("product-list");
+
+            // Loop through the products and create HTML elements for each
+            products.forEach(product => {
+                const productItem = document.createElement("div");
+                productItem.classList.add("product-item");
+
+                const productName = document.createElement("h3");
+                productName.textContent = product.name;
+
+                const productPrice = document.createElement("p");
+                productPrice.textContent = product.price;
+
+                const productImage = document.createElement("img");
+                productImage.src = product.image;
+                productImage.alt = product.name;
+
+                productItem.appendChild(productImage);
+                productItem.appendChild(productName);
+                productItem.appendChild(productPrice);
+
+                productList.appendChild(productItem);
+            });
+        });
+    </script>
+</body>
+</html>
